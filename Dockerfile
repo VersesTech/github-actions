@@ -5,5 +5,6 @@ RUN npm install -g \
       @csmith/release-it-calver-plugin
 
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-ENTRYPOINT [ /entrypoint.sh ]
+ENTRYPOINT [ "/entrypoint.sh" ]
