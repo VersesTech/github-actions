@@ -1,0 +1,5 @@
+name: Release
+description: Release new version
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
