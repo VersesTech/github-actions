@@ -17,6 +17,7 @@ else
     echo "Using default bumpver config."
     cp /bumpver.toml "${GITHUB_WORKSPACE}/bumpver.toml"
     git add "${GITHUB_WORKSPACE}/bumpver.toml"
+    git commit -m "Add bumpver.toml"
 fi
 
 bumpver show -vv
