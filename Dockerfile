@@ -1,6 +1,8 @@
 FROM node:18-alpine
 
-RUN npm install -g \
+RUN apk add --update --no-cache \
+      git \
+    && npm install -g \
       release-it \
       @csmith/release-it-calver-plugin
 
