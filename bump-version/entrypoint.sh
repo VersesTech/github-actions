@@ -7,6 +7,8 @@ cd "${GITHUB_WORKSPACE}" || exit
 
 git config --global --add safe.directory "${GITHUB_WORKSPACE}"
 
+INPUT_COMMITANDPUSH
+
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@github.verses.io"
 
@@ -21,8 +23,14 @@ else
 fi
 
 bumpver show -vv
+
+eval $(bumpver show --env)
+echo "oldVersion=${CURRENT_VERSION}" >> "${GITHUB_OUTPUT}"
+
 bumpver update -vv
 
+eval $(bumpver show --env)
+echo "newVersion=${CURRENT_VERSION}" >> "${GITHUB_OUTPUT}"
 
 # mkdir -p "${GITHUB_WORKSPACE}/release-dist/"
 # cd "${GITHUB_WORKSPACE}/release-dist/"

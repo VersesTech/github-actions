@@ -1,0 +1,10 @@
+name: Release
+description: Release new version
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+outputs:
+  oldVersion:
+    description: The old/current version
+  newVersion:
+    description: The updated version
